@@ -1,0 +1,13 @@
+[project]
+name = "terminai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-generativeai>=0.8.5",
+    "pathlib>=1.0.1",
+    "pyqt5==5.15.3",
+    "python-dotenv>=1.2.1",
+    "supabase>=2.25.0",
+]

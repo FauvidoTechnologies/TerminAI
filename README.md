@@ -30,11 +30,9 @@ This is the terminal
 
 ### Linux
 
-Ensure that python, pip and git are installed
+Ensure that git is installed
 
-		sudo apt update && sudo apt-get install python3
-		sudo apt-get install python3-pip
-		sudo apt install git
+		sudo apt update && sudo apt install git
 
 Then clone the GitHub repo locally. Now you can start installing the dependencies.
 
@@ -42,12 +40,6 @@ Then clone the GitHub repo locally. Now you can start installing the dependencie
 
 
 ### Windows 
-
-If winget is installed then run the following command to install python
-
-		winget install -e --id Python.Python.3
-
-Else install python via [python.org](https://www.python.org/downloads). Make sure to add it to the path variables. Note that pip comes installed with python versions 3.4 and above.
 
 Install git using (if no winget then use the [git_website](https://git-scm.com))
 
@@ -59,10 +51,9 @@ Then run the following command to clone the it locally,
 
 ### MacOS
 
-Install homebrew (mac’s package manager) and python
+Install homebrew (mac’s package manager)
 
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install python
-
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 Install git and clone the repo
 
@@ -88,25 +79,27 @@ Note for Windows users, you will need to bypass the execution policy to be able 
 
 ## Requirements and dependencies
 
-It is advisable to install the dependencies in a python virtual environment to avoid version clashes.
+This project uses `uv` for dependency management. Install `uv` if you haven't already:
 
-Run the following commands to achieve that:
+### Install uv
 
-		python3 -m venv VirtTerminal
+#### Linux/Mac:
+		curl -LsSf https://astral.sh/uv/install.sh | sh
 
-Activate it using the following commands
+#### Windows (PowerShell):
+		powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-### Linux/Mac:		 	
+Then, install the dependencies:
 
-		source VirtTerminal/bin/activate
+		uv sync
 
-### Windows (PowerShell):	 
+This will create a virtual environment in `.venv`. To activate it manually:
 
-		.\VirtTerminal\Scripts\Activate 
+#### Linux/Mac:
+		source .venv/bin/activate
 
-Install the necessary dependencies (in the root of the repo).
-
-		pip install -r requirements.txt
+#### Windows (PowerShell):
+		.\.venv\Scripts\Activate
 
 ## Run
 

@@ -1,5 +1,0 @@
-PyQt5==5.15.3
-google.generativeai
-python-dotenv
-supabase
-pathlib
